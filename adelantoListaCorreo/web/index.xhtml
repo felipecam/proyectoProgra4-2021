@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"> 
+    <h:head>
+        <title>Correos</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="card">
+                <p:dataTable var="correo" value="#{dtBasicView.correo}">
+                    <p:column headerText="Remitente">
+                        <h:outputText value="#{correo.remitente}" />
+                    </p:column>
+
+                    <p:column headerText="asunto">
+                        <h:outputText value="#{correo.asunto}" />
+                    </p:column>
+
+                    <p:column headerText="Fecha">
+                        <h:outputText value="#{correo.fecha}" />
+                    </p:column>
+                    <p:column headerText="Ver">
+                        <p:commandButton value="Ver Correo" type="button" icon="pi pi-external-link" onclick="PF('dlg1').show()"/>
+                        <p:dialog header="Header" widgetVar="dlg1" minHeight="40" width="350" showEffect="fade">
+                            <h:outputText value="Correo: #{correo.body}" escape="false" />
+                            <h:outputText value="Asunto #{correo.asunto}" />
+                            <h:outputText value="Remitente #{correo.remitente}" />
+                            <h:outputText value="Fecha #{correo.fecha}" />
+                        </p:dialog>
+                    </p:column>
+                </p:dataTable>
+            </div>
+        </h:form>
+
+
+    </h:body>
+</html>
+
