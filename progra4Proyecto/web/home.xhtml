@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"> 
+
+    <h:head>
+        <title>Home Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Bienvenido" style="width:350px">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel value="Uusario Existente: " />
+                    <h:outputLink value="faces/index.xhtml">Ingresar</h:outputLink>
+                    <h:outputLabel value="Crear Usuario: " />
+                    <h:outputLink value="faces/register.xhtml">Registrase</h:outputLink>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

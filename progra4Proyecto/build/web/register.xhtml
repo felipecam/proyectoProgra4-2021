@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"> 
+
+    <h:head>
+        <title>Registration Page</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <p:panel header="Registrarse" style="width:450px">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputLabel for="Nombre" value="Nombre" />
+                        <h:inputText id="fname" value="#{loginController.usuarioData.nombre}"
+                                     required="true" requiredMessage="Favor ingresar valor requrerido" />
+                        <h:outputLabel for="Apellido" value="Apellido" />
+                        <h:inputText id="lname" value="#{loginController.usuarioData.apellidos}"
+                                     required="true" requiredMessage="Favor ingresar valor requrerido" />
+                        <h:outputLabel for="Usuario" value="Usuario" />
+                        <h:inputText id="email" value="#{loginController.usuarioData.user}"
+                                     required="true" requiredMessage="Favor ingresar valor requrerido" />
+                        <h:outputLabel for="clave" value="clave" />
+                        <h:inputSecret id="psw" value="#{loginController.usuarioData.pass}"
+                                       required="true" requiredMessage="Favor ingresar valor requrerido" />
+                        <f:facet name="footer">
+                            <p:commandButton id="Registrarse" value="Registrarse" action="#{loginController.regitraUsuario}"/>
+                            <td><h:outputLink value="home.xhtml">Home</h:outputLink>
+                            </td>
+                        </f:facet>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
